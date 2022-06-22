@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="utf-8" />
+    <title>Classifications Browser</title>
+    <!-- force utf8: Łączność [±¶æ] Connectivity подключение  -->
+    <meta name="author" content="NHS Digital, Team: Data Products - ₯" />
+    <meta name="description" content=".The NHS Digital Classifications Browser allows Clinical Coders, online access to search OPCS4.8 and OPCS4.9 content. Coders can also access, browse and bookmark the corresponding chapters and categories within the UK National Clinical Coding Standards. "
+    />
+    <meta name="keywords" content="Classifications Browser, OPCS4.8, OPCS4.9" />
+    <meta name="robots" content="Index, Follow" />
+    <link rel="shortcut icon" type="image/icon" href="images/nhs_digital_fav.jpeg" />
+    <link rel="icon" type="image/png" href="images/nhs_digital_fav.jpeg" />
+    <script src="libs/director/director.min.js" type="text/javascript"></script>
+    <script async="async" type="text/javascript" data-cbid="30398f35-a144-4edd-a779-05481f9da7b3" src="https://consent.cookiebot.com/uc.js" id="Cookiebot"></script>
+
+    <link href="co.css" rel="stylesheet" type="text/css" />
+    <link href="libs/jstree/themes/default/style.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap CSS -->
+    <link href="libs/boostrap4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="eviewer.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <nav id="header" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="https://www.digital.nhs.uk/">
+            <img src="./images/NHS-Digital-logo_WEB_LEFT-100x855.png" style="width:70px" class="d-inline-block align-top" alt="" />
+        </a>
+        <a href="./" title="Classifications Browser" style="font-size: 16pt;color: #777; text-decoration:none">
+            <strong id="titleVersion">Classifications Browser</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav nav_color">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						OPCS-4
+					</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#/book/OPCS-4.8">OPCS-4.8</a>
+                        <a class="dropdown-item" href="#/book/OPCS-4.9">OPCS-4.9</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Ref Books
+					</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="ref_books/ICD-10_2021_5th_Ed_NCCS.pdf" target="_blank">
+							ICD-10 5th Edition NCCS (2021)
+						</a>
+                        <a class="dropdown-item" href="ref_books/ICD-10_2020_5th_Ed_NCCS.pdf" target="_blank">
+							ICD-10 5th Edition NCCS (2020)
+						</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="ref_books/OPCS-4.9_NCCS-2021.pdf" target="_blank">
+							OPCS-4.9 2021 NCCS
+						</a>
+                        <a class="dropdown-item" href="ref_books/OPCS-4.9_NCCS-2020.pdf" target="_blank">
+							OPCS-4.9 2020 NCCS
+						</a>
+                        <a class="dropdown-item" href="ref_books/Supplementary-Information-OPCS-4.9-2020.docx" target="_blank">
+							OPCS-4.9 Supplementary Info
+						</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="ref_books/ChemRegClinCodingStandGuidApl2020.pdf" target="_blank">
+							Chemo Standards 2020
+						</a>
+                        <a class="dropdown-item" href="ref_books/ChemRegClinCodingStandGuidApl2017.pdf" target="_blank">
+							Chemo Standards 2017
+						</a>
+                        <a class="dropdown-item" href="ref_books/NatTarChemoRegList1718.xlsx" target="_blank">
+							Chemo Regimens
+						</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user_guide.pdf" target="_blank">User guide</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resources.html" target="_blank">Resources</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="landingDiv" class="landing_hide"></div>
+
+    <div id="wrenDiv">
+        <div id="mainPanel">
+            <div id="left">
+                <div id="divSearch">
+                    <div class="search-strip__contents">
+                        <div class="search-strip__table-cell search-strip__table-cell--button">
+                            <button id="SearchAdvancedOptions" title="Search Filter" onclick="AdvancedSearchOnClick()" class="search-strip__button">
+								<img src="images/filter-results-button.png" alt="Search Filter" />
+							</button>
+                        </div>
+                        <div class="search-strip__table-cell">
+                            <input type="text" id="SearchInput" value="" onfocusout="hideSearchHistoryDiv()" placeholder="Search" class="search-strip__input" />
+                        </div>
+                        <div class="search-strip__table-cell search-strip__table-cell--button">
+                            <button id="SearchButton" title="Search" class="search-strip__button">
+								<img src="images/icon-search-white.png" alt="Search" />
+							</button>
+                        </div>
+                        <div class="search-strip__table-cell search-strip__table-cell--button">
+                            <button title="Search Help" class="search-strip__button" onclick=" window.open('user_guide.pdf#page=5', '_blank')">
+								<img src="images/help.png" alt="Search" />
+							</button>
+                        </div>
+                    </div>
+                    <div id="SearchHistoryResults"></div>
+                </div>
+
+                <div id="divTree">
+                    <div id="treeNav" class="demo"></div>
+                </div>
+            </div>
+
+            <div id="right">
+                <div id="divRibbon"></div>
+                <div id="swanDiv">
+                    <iframe id="iContent" frameborder="0">
+						<p>Your browser does not support iframes.</p>
+					</iframe>
+                </div>
+                <div id="frameForResults">
+                    <div id="frameResultsTop"></div>
+                    <div id="resultSearchDiv">
+                        <div id="resultSearchTree" class="demo"></div>
+                        <div id="resultMsg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer" class="bg-light page-footer font-small blue fixed-bottom">
+        <div class="text-center py-1">
+            <a href="accessibility.html">Accessibility</a> |
+            <a href="https://content.digital.nhs.uk/equality" target="_blank">Equality</a> |
+            <a href="https://digital.nhs.uk/about-nhs-digital/contact-us/freedom-of-information" target="_blank">
+				Freedom of Information
+			</a> |
+            <a href="https://digital.nhs.uk/about-nhs-digital/privacy-and-cookies" target="_blank">
+				Privacy and Cookies
+			</a> |
+            <a href="javascript:CookieConsent.renew();">Cookie consent</a> |
+            <a href="https://digital.nhs.uk/about-nhs-digital/terms-and-conditions" target="_blank">
+				Terms and Conditions
+			</a> |
+            <a href="license.html" target="_blank" id="_href_license">License</a> |
+            <a href="mailto:information.standards@nhs.net?subject=Classifications%20Browser">
+				Contact Us
+			</a>
+        </div>
+    </footer>
+
+    <div id="forDev">
+        <div id="licenseOpcs4Div" class="modal fade" data-backdrop="static"></div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Bootstrap JS -->
+    <!-- <script src="libs/jquery-3.3.1.min.js" type="text/javascript"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="libs/boostrap4/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="libs/jstree/jstree.min.js" type="text/javascript"></script>
+    <script src="onLoad.js" type="text/javascript"></script>
+    <script src="scroll.js" type="text/javascript"></script>
+
+    <script src="route.js" type="text/javascript"></script>
+    <script src="search.js" type="text/javascript"></script>
+
+    <script src="resize.js" type="text/javascript"></script>
+    <!-- Google Analytics -->
+    <script type="text/plain" data-cookieconsent="statistics">
+        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a,
+        m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); if (typeof (ga) == "function") { // it is possible to not load ga e.g. Cookiebot, network problem/offline .. ga('create', 'UA-132683255-1', 'auto'); } //
+        ga function makeGaEntry();
+    </script>
+</body>
+
+</html>

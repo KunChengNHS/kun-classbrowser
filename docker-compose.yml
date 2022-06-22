@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  backend:
+    depends_on:
+      - solr
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./classbrowser
+    ports:
+      - '80:80'
+  solr:
+    restart: always
+    build:
+      context: ./solr
+      dockerfile: Dockerfile
+    ports:
+      - '8983:8983'
+    container_name: solr

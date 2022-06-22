@@ -1,0 +1,483 @@
+html, body{
+
+    /* https://stackoverflow.com/a/23908106 */
+    /* Height and width fallback for older browsers. */
+
+    min-width: 800px;
+
+ 
+
+    margin: 0;
+
+}
+.page-format {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 50px;
+    font-family: Arial, 'Arial', serif;
+}
+
+.part1-header {
+    font-size: 3.1em;
+    font-weight: bold;
+}
+
+.part1-name {
+    font-size: 1.9em;
+    margin-bottom: 55px;
+}
+
+.part1-chapter {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.part1-subsection-header {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+a.three-d-code-link:link {
+    color: navy;
+    text-decoration: none;
+}
+
+a.three-d-code-link:visited {
+    color: navy;
+    text-decoration: none;
+}
+
+a.four-d-code-link:link {
+    color: navy;
+    text-decoration: none;
+}
+
+a.four-d-code-link:visited {
+    color: navy;
+    text-decoration: none;
+}
+
+.code-description {
+    font-size: 0.8em;
+}
+
+.line-space {
+    margin-bottom: 15px;
+    clear: both;
+}
+
+.part2-chapter {
+    font-size: 2.2em;
+    font-weight: bold;
+    padding-top: 5px;
+    border-top: 4px solid;
+}
+
+.part2-chapter-title {
+    font-size: 2.2em;
+}
+
+.part2-chapter-range {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid;
+}
+
+.part2-catagory-head {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.part2-catagory-entry {
+    font-size: 0.8em;
+}
+
+.part2-chapter-notes {
+    font-size: 1.3em;
+}
+
+.notes-exclude {
+    font-style: italic;
+}
+
+.notes-include {
+    font-style: italic;
+}
+
+.notes-notes {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.notes-seealso {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.notes-noteat {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.end-chapter-header {
+    border-bottom: 4px solid;
+    margin-bottom: 14px;
+}
+
+.volume2-section-heading {
+    font-size: 3.1em;
+    font-weight: bold;
+    border-top: 1px solid;
+    padding-top: 2%;
+}
+
+.volume2-section-description {
+    font-size: 1.9em;
+    margin-bottom: 55px;
+}
+
+.volume2-chapter-heading {
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-left: 4.9em;
+    margin-bottom: 0.2em;
+    padding-bottom: 5px;
+    margin-top: 0.2em;
+    width: 100%;
+    background-color: silver;
+}
+
+.volume2-table-heading {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.volume2-entry-code {
+    font-size: 0.8em;
+    /*float: left;*/
+    width: 8em;
+    /*display: table;*/
+    display: inline-block;
+}
+
+.volume2-entry-name {
+    font-size: 0.8em;
+    /*float: left;*/
+    width: 15em;
+    /*display: table;*/
+    display: inline-block;
+}
+
+.volume2-entry-descr {
+    /*float: left;*/
+    font-size: 0.8em;
+    /*display: table;*/
+    display: inline-block;
+}
+
+#clear {
+    clear: both;
+    display: inline;
+}
+
+.volume2-toc {
+    width: 55%;
+}
+
+.volume2-toc-section {
+    font-size: 1.3em;
+    font-weight: bold;
+    /*float: left;*/
+    display: inline-block;
+}
+
+.volume2-toc-descr {
+    font-size: 1.3em;
+    /*float: right;*/
+    margin-bottom: 2%;
+    display: inline-block;
+}
+
+a.volume2-anchor:link {
+    color: navy;
+    text-decoration: none;
+}
+
+a.volume2-anchor:visited {
+    color: navy;
+    text-decoration: none;
+}
+
+
+.opcs-page-format {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 50px;
+    font-family: Arial, 'Arial', serif;
+    font-size: 12pt;
+}
+
+.opcs-part-heading {
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+.opcs-part-subheading {
+    font-size: 1.9em;
+    margin-bottom: 55px;
+}
+
+.opcs-chapter-heading {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.opcs-chapter-subheading {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.opcs-entry-code {
+    width: 8em;
+    /*float: left;*/
+    display: inline-block;
+}
+
+.opcs-entry-code-heading {
+    width: 8em;
+    /*float: left;*/
+    font-weight: bold;
+    display: inline-block;
+}
+
+.opcs-entry-name {
+    /*float: left;*/
+    width: 15em;
+    /*display: table;*/
+    display: inline-block;
+}
+
+.opcs-entry-name-heading {
+    /*float: left;*/
+    width: 15em;
+    /*display: table;*/
+    font-weight: bold;
+    display: inline-block;
+}
+
+.opcs-entry-description {
+    /* display: table; 
+    
+    float: left; */
+    display: inline-block;
+
+
+}
+
+.opcs-entry-description-heading {
+    /*float: left;*/
+    font-weight: bold;
+    display: inline-block;
+}
+
+.opcs-part2-chapter-section {
+    font-size: 2.2em;
+}
+
+.opcs-part2-chapter-title {
+    font-weight: bold;
+}
+
+.opcs-chapter-notes {
+    font-size: 1.3em;
+}
+
+.opcs-include-notes {
+    font-style: italic;
+}
+
+.opcs-exclude-notes {
+    font-style: italic;
+}
+
+.opcs-note-notes {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.opcs-noteat-notes {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.opcs-seealso-notes {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.opcs-notes-tag {
+    clear: both;
+    width: 4.6em;
+    float: left;
+    text-align: right;
+}
+
+.opcs-notes-text {
+    float: left;
+}
+
+.opcs-toc {
+    font-size: 1.3em;
+    width: 70%;
+    display: block;
+}
+
+.opcs-toc-section {
+    font-weight: bold;
+    float: left;
+    padding-bottom: 15px;
+}
+
+.opcs-toc-description {
+    float: right;
+    padding-bottom: 15px;
+}
+
+a.opcs-anchor:link {
+    color: navy;
+    text-decoration: none;
+}
+
+a.opcs-anchor:visited {
+    color: navy;
+    text-decoration: none;
+}
+
+.opcs-volume2-chapter {
+    padding-top: 5px;
+    padding-left: 4.9em;
+    padding-right: 5px;
+    margin-bottom: 0.2em;
+    padding-bottom: 5px;
+    margin-top: 0.2em;
+    width: 100%;
+    background-color: silver;
+    display: table-cell;
+}
+
+.opcs-section-heading {
+    font-weight: bold;
+}
+.opcs-chapter-notes + hr{
+    clear: both;
+}
+.opcs-text {
+    font-family: Arial, 'Arial', serif;
+    font-size: 1em;
+}
+
+.opcs-clear {
+    /* font-size: 0.1em; */
+    clear: both;
+}
+
+div.section {}
+
+
+#INTRO_The_Revision_Process>table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#INTRO_The_Revision_Process>table td,
+table th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.OpcsRetirement {
+    padding-top: 1em;
+}
+
+.OpcsRetirement div {
+    margin-left: 4em;
+    position: relative;
+}
+
+.OpcsRetirement div div:first-child {
+    padding-top: 1em;
+}
+
+.OpcsRetirement div div {
+    font-weight: bold;
+}
+
+.OpcsRetirement div div span {
+    position: absolute;
+    left: -6em;
+}
+
+.AbbreviationsOpcs {
+    margin-left: 5em;
+    position: relative;
+}
+
+.AbbreviationsOpcs span {
+    position: absolute;
+    left: -3em;
+}
+
+
+
+
+.section .box {
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 2em;
+    display: inherit;
+    float: left;
+}
+
+.section .line {
+    width: 1.3em;
+    border-bottom: 2px solid black;
+    display: inherit;
+    float: left;
+}
+
+.section .line-text-area {
+    float: left;
+    padding-right: 0.5em;
+    width: 100px;
+}
+
+.section .sep {
+    display: block;
+}
+
+.section .text {
+    vertical-align: top;
+}
+
+.section .right-text-area {
+    float: left;
+    padding-top: 2px;
+}
+
+.section .right-text {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.section .clear {
+    clear: both;
+}

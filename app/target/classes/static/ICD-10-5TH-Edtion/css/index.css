@@ -1,0 +1,40 @@
+ul {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+ul > ul > ul > ul > ul > ul > ul > li:before {
+	content: '- - - - - - ';
+}
+
+ul > ul > ul > ul > ul > ul > li:before {
+	content: '- - - - - ';
+}
+
+ul > ul > ul > ul > ul > li:before {
+	content: '- - - - ';
+}
+
+ul > ul > ul > ul > li:before {
+	content: '- - - ';
+}
+
+ul > ul > ul > li:before {
+	content: '- - ';
+}
+
+ul > ul > li:before {
+	content: '- ';
+}
+
+ul > ul > li {
+	font-weight: normal;
+}
+ul > li {
+	font-weight: bold;
+}
+
+
+.note, .seealso, .mcode, .note p { font-weight: normal;  margin-top: 0; margin-bottom: 0;}
+
+.subpar { margin-left: 10ex; margin-top: 0; margin-bottom: 0;}

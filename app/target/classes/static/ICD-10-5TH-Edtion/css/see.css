@@ -1,0 +1,36 @@
+
+a.see:before {
+	content: ' - see ';
+	font-style: italic;
+}
+
+a.seealso[typ='B']:before {
+	content: ' - see also ';
+	font-style: italic;
+}
+
+a.seealso[typ='K']:before {
+	content: ' (see also ';
+	font-style: italic;
+}
+
+a.seealso[typ='K']:after {
+	content: ') ';
+	font-style: italic;
+}
+
+a:before {
+	display: inline-block;
+	white-space: pre-wrap;
+	color: black;
+}
+
+a:after {
+	display: inline-block;
+	white-space: pre-wrap;
+	color: black;
+}
+
+a {
+	font-weight: normal;
+}

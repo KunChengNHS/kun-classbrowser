@@ -1,0 +1,56 @@
+/*
+Dropdown button for links
+*/
+.dropbtn {
+    background-color: #005EB8;
+    color: white;
+    font-family:sans-serif;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 12pt !important;
+}
+
+.dropdown-content {
+    white-space: nowrap;
+    display: none;
+    position: absolute;
+    background-color: #E0F2BE;
+    min-width: 0x;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    line-height: 1.7;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 0px !important;
+    font-family:sans-serif;
+    text-decoration: none !important;
+    display: block !important;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #FFB81C;
+}
+/*
+Dropdown button for links End
+*/
+.valid_tree_node
+{
+    /*display: block;height: 15px;  margin-top: -15px;  visibility: hidden;*/
+}
+.valid_node
+{
+    /*    display: block;height: -55px;  margin-top: 55px;  visibility: hidden;*/
+}

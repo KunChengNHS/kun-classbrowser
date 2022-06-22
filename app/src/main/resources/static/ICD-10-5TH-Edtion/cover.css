@@ -1,0 +1,15 @@
+p {
+	margin-left: 50px;
+	color: #003350;
+	font-family: Arial, 'Arial', serif;
+}
+
+p.title {
+	font-style: italic;
+	font-size: 24pt;
+}
+
+p.subtitle {
+	font-weight: lighter;
+	font-size: 20pt;
+}

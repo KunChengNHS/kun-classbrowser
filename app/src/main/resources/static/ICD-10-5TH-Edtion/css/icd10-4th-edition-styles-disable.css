@@ -1,0 +1,882 @@
+/* ########################################################## initialise/reset ################################ */
+
+html{ height:100%; }
+body{
+	margin:0;  padding:0;  border-style:none;
+	height:100%;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:95%;
+	text-align:left;
+	--b--ackground-color:#ffffff; 
+}
+
+body {
+	background-color: #c0c0c0; /* disable */
+}
+
+h1, h2, h3, h4, h5, h6, p, blockqoute, pre, adress, div, form, fieldset{
+	margin:0;  padding:0;  border-style:none;
+}
+table, td, th{
+	margin:0;  padding:0;  
+}
+ul, ol, dl{
+	margin-top:0;  margin-bottom:0;  margin-right:0; /*no margin-left!!!*/
+	padding-top:0; padding-bottom:0; margin-right:0;
+	border-style:none;
+}
+
+
+img {
+	margin:0;  padding:0;  border-style:none;
+	vertical-align:bottom;
+}
+.internalPageNav,
+.verborgen,
+.hidden {
+	display:none;
+}
+/* #################################################################### structure ################################ */
+
+#seitenbreite { 
+	max-width:1024px; 
+	/* min-width:600px; - Mindestbreite in #classicont festgelegt, damit auch eine Angabe fuer den IE erfolgen kann */
+}
+/* ==> IE.css - workaround */
+
+/* ======== Seitenkopf ======== */
+
+
+#kopflogo { 
+  display:none;
+	position:relative;  top:0;  left:0;
+	background-repeat:no-repeat;
+	background-position:216px 0;
+	width:100%;
+	/*min-height:76px;*/
+	height:99px;
+}
+#kopflogo.kopfhintergrund {
+	background-image:url("header.jpg");
+}
+#kopfservice {
+	background-color:#036;
+	margin:0 0 0 216px;
+	padding:2px 0 2px 10px;
+	position:relative; top:-23px;
+	min-height:1.8em;
+}
+* html #kopfservice { width:100%; }
+
+/* ======== Seitenkoerper ======== */
+#koerper {
+	position:relative;  left:0;  top:0;
+	height:100%;
+	clear:both;
+}
+	#classinavi {
+		float:left; display:none; position:absolute; top:0; left:0;
+		width:196px; padding-top:120px;
+		background-repeat:no-repeat;
+		background-position:0 0;
+		background-image:url("logo.gif");
+	}
+	/* fuer moderne Browser und IE>=7: */
+	/* Problem IE7: mit position:fixed skaliert navi-Schrift nicht und Verkleinerungen schieben content HINTER navi */
+	html>body #classinavi { position:fixed; top:0; left:0; }
+	/* ggf. aelter IE und/oder IE-Skalierungsfix */
+	/* #classinavi { position:absolute; left:0; top:expression(body.scrollTop -109 + "px"); } */
+	/* beachte http://tagsoup.com/cookbook/css/fixed/ */
+
+	#classicont  { margin:0 0 0 3em; /*font-size:95%;*/ font-size:0.8em; }
+
+	/* ====== #classicont-Spaltenaufteilung ====== */
+/*	#classicont .einespalte   { float:left;  width:100%; margin:0; }
+	#classicont .linkespalte  { float:left;  width:48%;  margin:0 4px 0 0; }
+	#classicont .rechtespalte { float:right; width:48%;  margin:0; }
+	.trennblock{ clear:both; }
+*/
+
+/* #################################################################### head ##################################### */
+#kopfservice {
+	font-size:0.7em;
+	font-weight:bold;
+	color:#fff;
+}
+#kopfservice li {
+	display:inline;
+	line-height:1.8em;
+}
+#kopfservice li.kopfsprache { float:left; margin:0 60px 0 0; }
+#kopfservice li.kopflinks   { float:left; margin:0 40px 0 0; white-space:nowrap; }
+#kopfservice li.telsuche    { float:left; margin:0; }
+#kopfservice li.websuche    { float:right; }
+* html #kopfservice li.websuche { margin-right:3px; }
+
+#kopfservice form.kopfsuche { display:inline; padding-right:5px; white-space:nowrap; }
+#kopfservice form.kopfsuche div { display:inline; }
+#kopfservice form.kopfsuche label,
+#kopfservice form.kopfsuche .suchfeld,
+#kopfservice form.kopfsuche .suchbutton { font-size:1.0em; }
+#kopfservice form.kopfsuche .suchfeld   { width:125px; border:1px solid #fff; border-top:1px solid #fff; }
+* html #kopfservice form.kopfsuche .suchfeld { border-top:2px solid #fff; }
+#kopfservice form.kopfsuche .suchbutton { width:35px;  border:1px solid #fff; color:#036; background-color:#ccd6e0; }
+#kopfservice form.kopfsuche .suchbutton:hover,
+#kopfservice form.kopfsuche .suchbutton:focus {        border:1px solid #f60; }
+
+#kopfservice li.kopfsprache a,
+#kopfservice li.kopflinks   a,
+#kopfservice form.kopfsuche a { color:#fff; text-decoration:none; }
+#kopfservice li.kopfsprache a:hover, #kopfservice     .kopfsprache a:focus,
+#kopfservice li.kopflinks   a:hover, #kopfservice     .kopflinks   a:focus,
+#kopfservice form.kopfsuche a:hover, #kopfservice form.kopfsuche   a:focus { color:#036; background-color:#fff; }
+
+#kopfservice acronym { border-style:none; cursor:pointer; }
+
+
+/* #################################################################### classinavi ################################ */
+#classinavi ul { margin:0;  padding:0;  list-style-type:none; }
+#classinavi ul li      { margin:0 0 1px 0; font-size:0.7em; }
+#classinavi p.noscript { margin:0 0 3em 0; font-size:0.7em;
+	 padding:6px; font-weight:bold; color:#fff; background-color:#900;
+}
+
+#classinavi ul li.absatz { padding-top:1.5em; }
+
+#classinavi ul li a {
+	width:196px; max-width:190px; display:block; text-decoration:none; font-weight:bold;
+	border-left:6px solid #003366; background-color:#003366; color:#fff;
+}
+#classinavi ul li.block a {
+	border-left:6px solid #335c85; background-color:#335c85; color:#fff;
+}
+#classinavi ul li a:hover,
+#classinavi ul li a:focus,
+#classinavi ul li a:active,
+#classinavi ul li a.aktiv { border-left:6px solid #ff6600; }
+#classinavi ul li a        span,
+#classinavi ul li a:hover  span,
+#classinavi ul li a:focus  span,
+#classinavi ul li a:active span,
+#classinavi ul li a.aktiv  span { display:block; padding:5px 4px; }
+#classinavi ul li a        span span,
+#classinavi ul li a:hover  span span,
+#classinavi ul li a:focus  span span,
+#classinavi ul li a.active span span,
+#classinavi ul li a.aktiv  span span { margin:0; padding:0; }
+
+#classinavi form {
+	background-color:#ccd6e0;	
+	padding:0 0 6px 0; margin:0 0 3em 0;  font-size:0.8em;
+}
+#classinavi form input.text   { border:1px solid #fff; border-top:2px solid #fff; margin:0 10px; }
+#classinavi form input.button {
+	text-align:center; text-decoration:none;
+	border:1px solid #036;  background-color:#fff;
+	margin:0;  padding:0 5px 0 5px;
+}
+#classinavi form input.button:hover { border:1px solid #f60; text-decoration:none; }
+#classinavi form p {
+	font-weight:bold; color:#fff; background-color:#036;  margin:0; padding:5px 4px 5px 10px; 
+}
+#classinavi form label {
+	font-weight:bold; color:#000; background-color:#ccd6e0;  margin:0; padding:5px 4px 5px 10px; display:block;
+}
+
+/* #################################################################### content ################################ */
+#classicont h1                                 { line-height:1.375em; font-size:1.5em; }
+#classicont h2, #classicont h3                 { line-height:1.375em; font-size:1.25em; }
+#classicont h4, #classicont h5, #classicont h6 { line-height:1.375em; font-size:1.0em; }
+
+#classicont p,  #classicont dt, #classicont dd, #classicont li { line-height:1.375em; }
+#classicont li.Rubric-Label-Fragment-listitem1 { padding-left: 0px;list-style-type: disc;	list-style-position: inside; }
+#classicont li.Rubric-Label-Fragment-listitem2 { margin-left: -1em;list-style-type: none; }
+#classicont li.Rubric-Label-Fragment-listitem3 { margin-left: -3em;list-style-type: none; }
+
+
+
+
+#classicont dl.Rubric-coding-hint  dt{ display: none;}
+#classicont dl.Rubric-coding-hint  dd{ margin-left: 0;}
+
+/* ungenutzt?:    .plaintext { color:#000; text-decoration:none; font-weight:normal; } */
+
+#classicont div.linkToTop { margin-top:3em; padding:4px; background-color:#CCD6E0; color:#000000; text-align:right; }
+#classicont p.copyright { margin:0; padding:0; text-align:right;  }
+
+/* ########################################### */
+
+/* ##### Grundformatierungen fuer Links  ##### */
+#classicont a         { color:#00a; text-decoration:underline; }
+#classicont a:visited { color:#000; text-decoration:underline; }
+#classicont a:hover,
+#classicont a:focus,
+#classicont a:active  { color:#f60; text-decoration:none; }
+
+#classicont a.anchor,
+#classicont a.anchor:visited,
+#classicont a.anchor:hover,
+#classicont a.anchor:focus,
+#classicont a.anchor:active { color:#000; text-decoration:none; }
+
+
+/* ########################################### */
+#classicont div.AdditionalInfo p,
+#classicont div.AdditionalInfo table { margin-top:1em; }
+#classicont div.AdditionalInfo table th,
+#classicont div.AdditionalInfo table td { vertical-align:top; }
+#classicont div.AdditionalInfo li.abstand { margin-top:1em; }
+
+#classicont .textright  { text-align:right; }
+#classicont .textcenter { text-align:center; }
+#classicont .bold   { font-weight:bold; }
+#classicont .nowrap { white-space:nowrap; }
+
+/* ########################################### */
+#classicont h1 { margin:    0 0 0 0; padding:0; font-weight:normal; }             /* Classification-Titel */
+#classicont h1.h1second  { margin-top:1.5em; text-align:center; color:#000; }     /* Classi-Titel long index.html*/
+#classicont h2 { margin:  2em 0 0 0; padding:0; font-weight:bold; }               /* Chapter */
+#classicont h3 { margin:  2em 0 0 0; padding:0; font-weight:bold; }               /* Block(s) */
+#classicont h4 { margin:  2em 0 0 0; color:#000; padding:0; font-weight:bold; border-top:1px solid #000; } /* Cat.1 = Dreisteller */
+#classicont h5 { margin:.75em 0 0 0; color:#000; padding:0; font-weight:bold; }   /* Cat.2 = Viersteller */
+#classicont h6 { margin: .5em 0 0 0; color:#333; padding:0; font-weight:normal; } /* Cat.3 = Fuenfsteller */
+#classicont div.Category4 h6 { margin-top:0; } /* Cat.4 = Sechssteller im OPS */
+
+#classicont h1,
+#classicont h1 a.anchor, #classicont h1 a.anchor:visited,#classicont h1 a.anchor:active,#classicont h1 a.anchor:hover { color:#f60; text-decoration:none; }
+#classicont h1 a       ,#classicont h1 a:visited       ,#classicont h1 a:active       ,#classicont h1 a:hover         { color:#f60; }
+#classicont h2,
+#classicont h2 a.anchor,#classicont h2 a.anchor:visited,#classicont h2 a.anchor:active,#classicont h2 a.anchor:hover { color:#009; text-decoration:none; }
+#classicont h2 a       ,#classicont h2 a:visited       ,#classicont h2 a:active       ,#classicont h2 a:hover        { color:#009; }
+#classicont h3,
+#classicont h3 a       ,#classicont h3 a:visited       ,#classicont h3 a:active       ,#classicont h3 a:hover        { color:#000; }
+#classicont h3 a.anchor,#classicont h3 a.anchor:visited,#classicont h3 a.anchor:active,#classicont h3 a.anchor:hover { color:#000; text-decoration:none; }
+ 
+#classicont h4 a.code { text-decoration:none; background-color:#000; color:#fff; width:5.8em; display:block; float:left; padding:0 0 1px 1px; }
+#classicont h5 a.code { text-decoration:none; background-color:#fff; color:#000; width:5.8em; display:block; float:left; }
+#classicont h6 a.code { text-decoration:none; background-color:#fff; color:#333; width:5.8em; display:block; float:left; }
+#classicont h6 a.code span.invisible { color:#fff; } /* Cat.4 = Sechssteller im OPS */
+#classicont h4 span.label,
+#classicont h5 span.label,
+#classicont h6 span.label { display:block; margin-left:6.3em; }
+
+#classicont h4 a.codeTextChange { text-decoration:none; background-color:#000; color:#fff; display:block; float:left; padding:0 0 1px 1px; }
+#classicont h5 a.codeTextChange { text-decoration:none; background-color:#fff; color:#000; display:block; float:left; }
+#classicont h6 a.codeTextChange { text-decoration:none; background-color:#fff; color:#333; display:block; float:left; }
+
+
+/* ##### alle <dl> ###################################### */
+#classicont div.Chapter   dl { margin:1.5em 0; }
+#classicont div.Block     dl { margin:1em 0; }
+#classicont div.Category1 dl,
+#classicont div.Category2 dl,
+#classicont div.Category3 dl { margin:.25em 0 .5em 6.3em; }
+#classicont div.Category4 dl { margin:.1em  0 .1em 6.3em; }
+#classicont div.Category3 dl.Rubric-modifierlink,
+#classicont div.Category4 dl.Rubric-modifierlink { margin-top:0; }
+
+/* ##### alle <dt> + <dd> ################################### */
+
+#classicont dl.BlockList dt, #classicont dl.ListClassesWithUsage dt { font-weight:bold; }
+#classicont dl.BlockList dd, #classicont dl.ListClassesWithUsage dd { margin:.5em 0; }
+
+#classicont dl.Rubric-inclusion dt,
+#classicont dl.Rubric-exclusion dt,
+#classicont dl.Rubric-note      dt { width:4em; font-weight:bold; font-style:italic; float:left; }
+#classicont dl.Rubric-inclusion dd,
+#classicont dl.Rubric-exclusion dd,
+#classicont dl.Rubric-note      dd { margin-left:4.3em; padding-bottom:.2em; }
+#classicont dl.Rubric-inclusion-hidden dt { display:none; }
+#classicont dl.Rubric-inclusion-hidden dd { margin-left:0; }
+
+/* OPS: */
+#classicont dl.ModifierBlock dt { width:4em; font-weight:bold; font-style:italic; float:left; }
+#classicont dl.ModifierBlock dd { margin-left:4.3em; padding-bottom:.2em; }
+#classicont dl.ModifierBlock>dd  /*not supported by IE*/ { margin-top:.5em; margin-bottom:.5em; margin-left:0px; }
+/* /OPS */
+
+#classicont dl.Rubric-modifierlink dt,
+#classicont dl.Rubric-text         dt { display:none; }
+#classicont dl.Rubric-modifierlink dd { margin:0 0 .5em 0; }
+#classicont dl.Rubric-text         dd { margin:.5em 0; }
+
+/* ##### dl.BlockList-classiconte ###################################### */
+#classicont dl.BlockList dd ul,
+#classicont dl.ListClassesWithUsage dd ul { list-style-type:none; padding-left:0; margin:0; }
+#classicont dl.BlockList dd ul ul { padding-left:5.8em; }
+
+#classicont dl.BlockList a.code, #classicont dl.ListClassesWithUsage a.code     { width:5.5em; display:block; float:left; }
+#classicont dl.ListClassesWithUsage span.label { margin-left:0em; display:block; }
+#classicont dl.BlockList li,         #classicont dl.ListClassesWithUsage li         { clear:left; padding-bottom:.2em; }
+/* ==> IE.css
+* html #classicont dl.BlockList span.label,
+* html #classicont dl.ListClassesWithUsage span.label { margin-left:0; float:left; }
+*/
+
+/* ##### dl.Rubric-inclusion/dl.Rubric-exclusion-classiconte ###################################### */
+#classicont dl.Rubric-note      dd ul,
+#classicont dl.Rubric-inclusion dd ul,
+#classicont dl.Rubric-exclusion dd ul,
+#classicont dl.Rubric-inclusion td ul,
+#classicont dl.Rubric-exclusion td ul          { margin:0; padding:0;          list-style-type:none; }
+#classicont dl.Rubric-note      dd ul ul,
+#classicont dl.Rubric-inclusion dd ul ul,
+#classicont dl.Rubric-exclusion dd ul ul,
+#classicont dl.Rubric-inclusion td ul ul,
+#classicont dl.Rubric-exclusion td ul ul       { margin:0; padding:0 0 0 30px; list-style-type:disc; }
+#classicont dl.Rubric-note      dd ul ul ul,
+#classicont dl.Rubric-inclusion dd ul ul ul,
+#classicont dl.Rubric-exclusion dd ul ul ul,
+#classicont dl.Rubric-inclusion td ul ul ul,
+#classicont dl.Rubric-exclusion td ul ul ul    { margin:0; padding:0 0 0 60px; list-style-type:circle; }
+#classicont dl.Rubric-note      dd ul ul ul ul,
+#classicont dl.Rubric-inclusion dd ul ul ul ul,
+#classicont dl.Rubric-exclusion dd ul ul ul ul,
+#classicont dl.Rubric-inclusion td ul ul ul ul,
+#classicont dl.Rubric-exclusion td ul ul ul ul { margin:0; padding:0 0 0 90px; list-style-type:square; }
+
+/* ########################################### */
+#classicont table { border-collapse:collapse; empty-cells:show; border-spacing:0;  }
+#classicont table td:nth-child(n+2) {
+border-left:1px solid #999;
+}
+#classicont table td { text-align:left; /*vertical-align:middle;*/ margin:0; padding:2px 5px;   }
+#classicont table th { text-align:left; vertical-align:top;    margin:0; padding:2px 5px; border:1px solid #ccc;
+                       background-color:#e0e0e0; color:#000; } /* 8513  Redmine font-weight:bold; } */
+
+#classicont table.clear th,
+#classicont table th.clear { background-color:#ffffff; }
+						  
+#classicont div.TocBlock table { margin:1.5em 0; border-style:none; }
+#classicont div.TocBlock table th,
+#classicont div.TocBlock table td { border-style:none; padding:.2em 1em; }
+#classicont .Rubric-introduction table { border:none; margin-bottom:1em; }
+
+#classicont table.ModifierTable { margin:0; padding:0; }
+#classicont table.ModifierTable th { display:none; }
+#classicont table.ModifierTable td { padding:0 5px; border-style:none; }
+#classicont table.ModifierTable td.modifierCode  { vertical-align:top; }
+#classicont table.ModifierTable td dl,
+#classicont table.ModifierTable td dd { margin:0; }
+
+#classicont table.Rubric-Fragment-TwoColumnTable,
+#classicont table.Rubric-Fragment-ThreeColumnTable,
+#classicont table.Rubric-Fragment-FourColumnTable { margin:0 0 4px 0; padding:0;  }
+
+#classicont table.Rubric-Fragment-TwoColumnTable td.Rubric-Fragment-TwoColumnTable-1stCol,
+#classicont table.Rubric-Fragment-ThreeColumnTable td.Rubric-Fragment-ThreeColumnTable-1stCol,
+#classicont table.Rubric-Fragment-FourColumnTable td.Rubric-Fragment-FourColumnTable-1stCol
+{ border-style:none; margin-left:0; padding-left:0; }
+
+#classicont table.Rubric-Fragment-TwoColumnTable td.Rubric-Fragment-TwoColumnTable-2ndCol,
+#classicont table.Rubric-Fragment-ThreeColumnTable td.Rubric-Fragment-ThreeColumnTable-2ndCol,
+#classicont table.Rubric-Fragment-ThreeColumnTable td.Rubric-Fragment-ThreeColumnTable-3rdCol,
+#classicont table.Rubric-Fragment-FourColumnTable td.Rubric-Fragment-FourColumnTable-2ndCol,
+#classicont table.Rubric-Fragment-FourColumnTable td.Rubric-Fragment-FourColumnTable-3rdCol,
+#classicont table.Rubric-Fragment-FourColumnTable td.Rubric-Fragment-FourColumnTable-4thCol
+{ border-style:none; border-left:1px solid #999; }
+
+ 
+/* ########################################### */
+/*p { margin:0; padding:.2em 0 .2em 0; } --- IE-Probleme z.B bei F20-F29: dl.Rubric-text>dd>p */
+#classicont p { margin:0 0 .5em 0; }
+#classicont th p { margin:.25em 0; }
+#classicont td p,
+#classicont li p { line-height:1em; margin:.25em 0; }
+#classicont td li p { line-height:1em; margin-bottom:0; }
+
+#classicont p.cell-GVHD {}
+#classicont p.chpt-cont2-l2 { line-height:1em; margin-left:3em; }
+#classicont p.chpt-spec-terms1 {}
+#classicont p.chpt-spec-terms1-last {}
+#classicont p.chpt-spec-terms2 {}
+#classicont p.chpt-spec-terms2 {}
+#classicont p.chpt-spec-terms2-last {}
+#classicont p.chpt-spec1 {}
+#classicont p.chpt-spec1-last {}
+#classicont p.chpt-spec2 {}
+#classicont p.chpt-spec2-last {}
+#classicont p.chpt-spec3 {}
+#classicont p.chpt-spec3-last {}
+#classicont p.chpt-spec3-tab {}
+#classicont p.chpt-spec4 {}
+#classicont p.chpt-spec4-last {}
+#classicont p.chpt-text-last {}
+#classicont p.head-ital-14 {}
+#classicont p.headingIntro { font-size:1.25em; margin-top:2em;  padding:0; font-weight:bold; /*like h2*/ }
+#classicont p.LAHS { line-height:1em; font-family:courier,monospace; }
+#classicont p.tab-col2 {}
+
+#classicont p.termList1,
+#classicont p.termList1-last,
+#classicont p.termList2 { line-height:1em; margin-bottom:.2em; }
+#classicont p.termList3 { line-height:1em; margin-bottom:1em; }
+#classicont p.chpt-terms1,
+#classicont p.chpt-terms2 { line-height:1em; margin-bottom:.5em; }
+
+#classicont p.Zinkl,
+#classicont span.Zinkl { padding:0; line-height:1em; margin:0; font-weight:bold; font-style:italic; }
+
+#classicont span.Rubric-footnote { color:#000; text-decoration:none; font-weight:normal; display:block; }
+
+#classicont ol.List-Ol-loweralpha { list-style-type:lower-alpha; }
+/*#classicont ul.List-Ul,
+#classicont ul.List-Ul-,
+#classicont ul.List-Ul-bullet {}*/
+#classicont ul.List-Ul-dash { list-style-type:circle; }
+
+
+/* ##### DEBUG ###################################### */
+/* ##### DEBUG ###################################### */
+/* ##### DEBUG ###################################### */
+/* ##### DEBUG ###################################### */
+
+/*debug - sichtbarkeit*/
+/*
+dl.ModifierBlock    { border:1px solid #900; }
+dl.Rubric-inclusion { border:1px solid #8f8; }
+dl.Rubric-exclusion { border:1px solid #88f; }
+dl.Rubric-note      { border:1px solid #f88; }
+dl.ModifierBlock>dd,
+dl.Rubric-modifierlink dd,
+dl.Rubric-text         dd,
+dl.Rubric-coding-hint  dd,
+dl.Rubric-definition   dd,
+dl.Rubric-introduction dd { background-color:#efe; }
+div.Chapter>dl { border:1px solid #ccc; }
+/**/
+
+.error { background-color:red; color:white; font-weight:bold; }
+.todo,
+body > p,
+div.code1 > p,
+div.code2 > p { background-color:#fcc; }
+/* body > table { background-color:#fcc; border-top:2px solid red; border-bottom:2px solid red; } */
+
+
+
+
+/*
+td p,
+li p,
+dd p { background-color:#ccc; color:white; }
+dl.Rubric-inclusion p,
+dl.Rubric-exclusion p { background-color:black; color:white; font-weight:bold; border:2px solid red;}
+*/
+
+
+/* ######### eViewer updates ###### */
+#classicont .Rubric-Fragment-ThreeColumnTable li.Rubric-Label-Fragment-listitem1 { margin-left: -2ex;list-style-type: disc;	list-style-position: outside;}
+#classicont .Rubric-Fragment-ThreeColumnTable li.Rubric-Label-Fragment-listitem2 { margin-left: -7ex;list-style-type: none; text-indent:-3ex;}
+#classicont .Rubric-Fragment-ThreeColumnTable li.Rubric-Label-Fragment-listitem3 { margin-left: -3em;list-style-type: none; }
+#classicont .Rubric-definition dt, #classicont dl.Rubric-introduction dt { display: none; }
+#classicont .Rubric-definition dd { margin-left: 0;}
+#classicont dl.ModifierBlock { margin-left: 0;}
+#classicont dl.ModifierBlock dt { display: none;}
+#classicont dl.ModifierBlock dd p {}
+#classicont dl.ModifierBlock dd table  {}
+#classicont dl.ModifierBlock dd table td.modifierCode, #classicont dl.ModifierBlock dd table div.modifierTitle { font-weight: bold;}     
+#classicont dl.ModifierBlock dd table td dl.Rubric-inclusion-hidden { margin-left: 0ex; }
+#classicont dl.ModifierBlock dd table td dl.Rubric-inclusion-hidden table.Rubric-Fragment-TwoColumnTable { margin-left: 0; }
+#classicont table.ModifierTable td dl.Rubric-exclusion dd {margin-left: 50px;}
+/* .label { margin-left: -27px;} */
+#icd10Vol3 { margin-left: 7ex; }
+.subpar { position: relative; left: 2em;}
+#classicont dl.Rubric-exclusion dt { display: block; position: relative; top: 0; left: 0;  padding-left: 0em;}
+#classicont dl.Rubric-exclusion dd { display: block; position: relative; padding-left: 0em; }
+#classicont dl.ModifierBlock > dd, /*not supported by IE*/
+#classicont dl.Rubric-modifierlink dd,
+#classicont dl.Rubric-text dd,
+#classicont dl.Rubric-coding-hint dd,
+#classicont dl.Rubric-definition dd,
+#classicont dl.Rubric-introduction dd { margin: .5em 0; }
+
+/* #classicont { background-color: #e5e5e5; } */ /* check js */ 
+
+
+
+
+/*
+    td {
+      border-bottom: 1px solid #ccc;
+      padding: 5px;
+      text-align: left; *//* IE *//*
+    }
+    td + td {
+      border-left: 1px solid #ccc;
+    }
+    th {
+      padding: 0 5px;
+      text-align: left; *//* IE *//*
+    }
+    .header-background {
+      border-bottom: 1px solid black;
+    }
+    */
+    
+    /* above this is decorative, not part of the test */
+    
+    .fixed-table-container {
+      /*width: 100%;*/
+      left: 3ex; /* for note */
+      right: 0;
+      /* height: 200px; */
+      /* border: 1px solid black; */
+      /*margin: 10px auto;*/
+      /* background-color: white; */
+      /* above is decorative or flexible */
+      position: absolute; /* could be absolute or relative */
+      padding-top: 0px; /* height of header */
+      top: 0;
+      bottom: 0;
+      z-index: 100;
+    }
+
+    .fixed-table-container-inner {
+      /*overflow-x: hidden;*/
+      overflow-y: auto;
+      height: 99%; border: 1px solid green;
+    }
+     
+    .header-background {
+      background-color: #e0e0e0;
+      height: 0px; /* height of header */
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+    
+    /*table {
+      background-color: white;
+      width: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }*/
+
+    .th-inner {
+      position: absolute;
+      top: 0;
+      line-height: 2ex; /* height of header */
+      text-align: left;
+      /*border-left: 1px solid black;
+      padding-left: 5px;
+      margin-left: -5px;*/
+    }
+  .first .th-inner ,
+   .second .th-inner, 
+  .third .th-inner ,
+  .fourth .th-inner ,
+  .fifth .th-inner 
+    {
+        border-left: none;
+        padding-left: 0px;
+        position: absolute;
+        top: 2.5ex;
+        height: 6ex;
+        /*border: solid red 2px;*/
+        width: 9%;
+        /*border-top: 1px solid grey;
+        border-left: 1px solid grey;*/
+      }
+    
+    
+  .first .th-inner 
+     { width: 30%;}
+    
+		
+		/* extra-wrap */
+		
+		.extrawrap th {
+			text-align: center;
+		}
+		
+		.extra-wrap {
+			width: 100%;
+		}
+	
+    /* for complex headers */
+    
+    .complex  .fixed-table-container {
+      padding-top:  58px; /* height of header ********************** */
+      /*overflow-x: hidden; /* for border */
+    }
+    
+    .complex .header-background {
+      height: 60px;
+    }
+    
+    /*.complex-top .th-inner {
+      border-bottom: 1px solid black;
+      width: 100%
+    }*/
+    
+    .complex-bottom .th-inner {
+      top: 30px;
+      width: 100%;
+         
+
+    }
+    
+    .complex-top .third .th-inner { /* double row cell */
+      height: 60px;
+      border-bottom: none;
+      background-color: #D5ECFF;
+    }
+
+.rowZero { color:#e0e0e0; background-color:#e0e0e0;}
+.indentNotBold  ,
+.th-inner
+  { color:#000; text-decoration:none; font-weight:normal; display:block; }
+dl.Rubric-small     dt { float:left;}
+dl.Rubric-small     dd { margin-left:2em;}
+dl.Rubric-small2     dt { float:left;font-weight:bold; font-style:italic;}
+dl.Rubric-small2plain     dt { float:left;}
+dl.Rubric-small2     dd { margin-left:4em;}
+dl.Rubric-small3     dt { float:left; }
+dl.Rubric-small3    dd { margin-left:2em;}
+dl.Rubric-editIcd10     dt { float:left; }
+dl.Rubric-editIcd10    dd { margin-left:10em;}
+.tableNoBorder { border: 0; }
+a[type="forTempFile"] {
+    background-color: yellow;
+} 
+a[type="forHtmlFile"] {
+    background-color: grey;
+} 
+
+
+.smallRedDiv{
+  display: inline-block; 
+  background-color: red; 
+  width: 2ex; 
+  height: 2ex; 
+  position: relative; 
+  }
+
+.CodeingClinicRefFrame{
+  display: inline-block;
+  float: right; 
+  width: 55%; 
+  text-decoration:none; 
+  font-weight:normal;
+  margin-right: 1ex;
+  }
+
+.CodeingClinicRed{
+  position: relative;
+  width: 100%; 
+  border: solid 2px red;
+  }
+
+.CodeingClinicRefTopOuter{
+  padding-top: 1ex;
+  padding-bottom: 1ex;
+  
+  background-color: #FF4B4B;
+  }
+  
+.CodeingClinicRefTopInner{
+  width:100%;
+  font-weight: bold;
+  display: table;
+  }
+  
+
+.CodeingClinicRefTable{
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 100%;
+  background-color: #FF7575;
+  display: table;
+  }
+  
+.divRow{  
+  border-collapse: collapse;
+  border: 1px solid black;  
+  display: table-row;
+  }
+ 
+ 
+ 
+.divCell{
+  width: 50%;
+  display: table-cell;
+  }
+
+.divCellRightJustify{
+  text-align: right;
+  }
+
+  
+.tableWithBorder{
+  border-left: 1px solid black; 
+  border-top: 1px solid black; 
+  }
+  
+.CodeingClinicRefTable li {
+  /* request 9333, QA eversion notes 20-4-15.docx, point 4. point a) */
+  margin-bottom: 0.2ex;
+  }  
+  
+.CodeingClinicRefTable .li1{
+  text-decoration:none; 
+  font-weight:normal;
+  margin-left: 1ex;
+  list-style-type:none;
+  }
+ 
+.CodeingClinicRefTable .li2{
+  text-decoration:none; 
+  font-weight:normal;
+  margin-left: 3ex;
+  list-style-type:none;
+  }
+  
+.CodeingClinicRefTable .li3{
+  text-decoration:none; 
+  font-weight:normal;
+  margin-left: 4ex;
+  list-style-type:none;
+  }
+
+.CodeingClinicRefTable .li4{
+  text-decoration:none; 
+  font-weight:normal;
+  margin-left: 5ex;
+  list-style-type:none;
+  }
+
+  
+.CodeingClinicRefTable .li7{
+  text-decoration:none; 
+  font-weight:normal;
+  margin-left: 8ex;
+  list-style-type:none;
+  }
+  
+.CodeingClinicRefTable .li8{
+  text-decoration:none; 
+  font-weight:normal;
+  margin-left: 10ex;
+  list-style-type:none;
+  }
+  
+.CodeingClinicRefTable .li5{
+  text-decoration:none; 
+  font-weight:normal;
+  margin-left: 6ex;
+  list-style-type:none;
+  }
+  
+  
+.CodeingClinicRefTable .liMinus{
+  position: absolute;
+  left: 0;
+  }
+.CodeingClinicRefTable .liMinus7{
+  position: absolute;
+  left: 7ex;
+  }
+.CodeingClinicRefTable .liMinus6{
+  position: absolute;
+  left: 6ex;
+  }
+ 
+.divTd{
+  position: relative;
+  }
+.brightRed{
+  padding-top: 2ex;
+  padding-bottom: 2ex;
+  background-color: #FF7575;
+  }
+.bottomMessage{
+  margin-top: 1ex;
+  }
+  
+  
+  
+.excludeIncludeMinus7 {
+  position: absolute;
+  left: 16ex;
+  font-style: italic;
+  font-weight: bold;
+  }
+  
+.redSquare{
+  color: red;
+  font-size: 150%;
+  }
+  
+  
+ 
+
+ 
+#table-1 th, #tableOneClone th{ 
+  text-align:left; 
+  vertical-align:top;    
+  margin:0; 
+  padding:2px 5px; 
+  border:2px solid #ccc;
+  background-color:#e0e0e0 /* red; !important; */;
+  color:#000 /* blue !important */;
+  white-space:pre-wrap;
+  } 
+  /* 8513  Redmine font-weight:bold; } */
+  
+
+  
+
+#tableOneClone th { 
+    font-size: 81%;
+    border-width: thin;
+    /* border-color: grey;
+    / * background-color:red; !important; */
+  }
+
+#tableOneClone { 
+  border-collapse: collapse;
+  }
+
+  
+  
+.noteTable, .noteNotTable {
+  position: absolute;
+  /*left: 30px;*/
+  display: block;
+  width: 6ex; 
+  height: 2.2ex;
+  min-width: 0; 
+  min-height:0;
+  /* background-color:  #FF0066; */
+  background-color:#FFFFA3;
+  font-size: 1.4ex !important;
+  padding: 0;
+  margin: 0;
+  border: 2px solid #FCCA5F;
+  z-index: 2000;
+  font-weight: normal;
+  font-style: normal;
+  }
+  
+.titleDivClass ul{
+  list-style-type: disc;
+  margin-left: 2ex;
+  }
+.titleDivClass, .titleDivClass ul, .titleDivClass ul li{
+    font-style: normal;
+    font-weight: normal;
+    }
+
+.noteTable{
+  left: 0ex !important;
+  }
+  
+.noteNotTable{
+  left: -7ex !important;
+  }
+  
+.noteTabForCopy{
+  display:none; /* hide note */
+  }

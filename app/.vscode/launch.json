@@ -1,0 +1,14 @@
+{
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Spring Boot-ClassbrowserApplication<classbrowser>",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"mainClass": "nhs.digital.eviewerbackend.ClassbrowserApplication",
+			"projectName": "classbrowser",
+			"args": "",
+			"envFile": "${workspaceFolder}/.env"
+		}
+	]
+}
