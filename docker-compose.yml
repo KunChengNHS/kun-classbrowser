@@ -6,7 +6,7 @@ services:
     restart: always
     build:
       dockerfile: Dockerfile
-      context: ./classbrowser
+      context: ./app
     ports:
       - '80:80'
   solr:
